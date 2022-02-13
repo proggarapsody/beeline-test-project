@@ -1,0 +1,12 @@
+.purple-button {
+  border-radius: 4px;
+  background: var(--color-purple-gradient);
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 17px;
+  transition: all 0.2s linear;
+  &:hover {
+    background: var(--color-darkpurple-gradient);
+    transition: all 0.2s linear;
+  }
+}

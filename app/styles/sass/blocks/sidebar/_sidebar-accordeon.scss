@@ -1,0 +1,85 @@
+.sidebar__accordeon {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.2s linear;
+  animation: fade 2s;
+  height: -10px;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &.active {
+      .accordeon-arrow-icon {
+        transform: rotate(-180deg);
+        transition: transform 0.2s linear;
+      }
+    }
+  }
+  &-label {
+    align-self: center;
+  }
+  &-item {
+    display: flex;
+    padding-left: 50px;
+    gap: 24px;
+    color: var(--color-text);
+    opacity: 0.5;
+    align-items: center;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    text-align: center;
+
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 10px;
+    transition: opacity 0.1s linear;
+    & .sidebar__accordeon-icon {
+      fill: var(--color-text);
+      opacity: 0.5;
+    }
+    &.active {
+      opacity: 1;
+      border-left: 3px solid var(--color-purple);
+      background-color: var(--color-sidebar-active);
+      & .sidebar__accordeon-icon {
+        fill: var(--color-purple);
+      }
+    }
+
+    &:hover {
+      opacity: 1;
+      transition: opacity 0.1s linear;
+    }
+  }
+}
+.sidebar__accordeon-icon {
+  height: 18px;
+  width: 18px;
+}
+
+.accordeon-arrow-icon {
+  height: 6px;
+  width: 10px;
+  fill: var(--color-white);
+  margin-right: 30px;
+}
+
+.sidebar__accordeon.visible {
+  margin-top: 18px;
+  max-height: 250px;
+  transition: all 0.2s linear;
+  animation: fade 2s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
